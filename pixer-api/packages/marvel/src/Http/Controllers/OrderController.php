@@ -421,6 +421,9 @@ class OrderController extends CoreController
                 case PaymentGatewayType::FLUTTERWAVE:
                     $this->flutterwave($order, $request, $this->settings);
                     break;
+                case PaymentGatewayType::MIDTRANS:
+                    $this->midtrans($order, $request, $this->settings);
+                    break;
             }
         } catch (MarvelException $e) {
             throw new MarvelException(SOMETHING_WENT_WRONG, $e->getMessage());

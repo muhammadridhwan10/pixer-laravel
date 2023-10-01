@@ -3,6 +3,7 @@ import { useCopyToClipboard } from 'react-use';
 import { ClipboardIcon } from '@/components/icons/clipboard';
 import { MollieIcon } from '@/components/icons/payment-gateways/mollie';
 import { PayPalIcon } from '@/components/icons/payment-gateways/paypal';
+import { MidtransIcon } from '@/components/icons/payment-gateways/midtrans';
 import { RazorPayIcon } from '@/components/icons/payment-gateways/razorpay';
 import { StripeIcon } from '@/components/icons/payment-gateways/stripe';
 import { SSLComerz } from '@/components/icons/payment-gateways/sslcomerz';
@@ -33,6 +34,7 @@ const WebHookURL = ({ gateway }: WebHookURLProps) => {
   const icon: any = {
     stripe: <StripeIcon className="h-4 w-auto" />,
     paypal: <PayPalIcon className="h-4 w-auto" />,
+    midtrans: <MidtransIcon className="h-4 w-auto" />,
     razorpay: <RazorPayIcon className="h-4 w-auto" />,
     mollie: <MollieIcon className="h-4 w-auto" />,
     sslcommerz: <SSLComerz className="h-4 w-auto" />,

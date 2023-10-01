@@ -1,14 +1,17 @@
 import { StripeIcon } from '@/components/icons/payment-gateways/stripe';
 import { PayPalIcon } from '@/components/icons/payment-gateways/paypal';
+import { MidtransIcon } from '@/components/icons/payment-gateways/midtrans';
 import { RazorPayIcon } from '@/components/icons/payment-gateways/razorpay';
 import { MollieIcon } from '@/components/icons/payment-gateways/mollie';
 import { PayStack } from '@/components/icons/payment-gateways/paystack';
 import BitpayIcon from '@/components/icons/payment-gateways/bitpay';
 import { PayPalDarkIcon } from '@/components/icons/payment-gateways/paypal-dark';
+import { MidtransDarkIcon } from '@/components/icons/payment-gateways/midtrans-dark';
 import BitpayDarkIcon from '@/components/icons/payment-gateways/bitpay-dark';
 import { MollieDarkIcon } from '@/components/icons/payment-gateways/mollie-dark';
 import { PayStackDark } from '@/components/icons/payment-gateways/paystack-dark';
 import { RazorPayDarkIcon } from '@/components/icons/payment-gateways/razorpay-dark';
+import { XenditIcon } from '@/components/icons/payment-gateways/xendit';
 import { useModalState } from '@/components/modal-views/context';
 import Button from '@/components/ui/button';
 import { useGetPaymentIntent } from '@/data/order';
@@ -101,6 +104,24 @@ const PaymentGateways: React.FC<IProps> = ({
       value: PaymentGateway.PAYPAL,
       icon: <PayPalIcon />,
       darkIcon: <PayPalDarkIcon />,
+      component: PaymentOnline,
+      width: 82,
+      height: 21,
+    },
+    MIDTRANS: {
+      name: 'Midtrans',
+      value: PaymentGateway.MIDTRANS,
+      icon: <MidtransIcon />,
+      darkIcon: <MidtransDarkIcon />,
+      component: PaymentOnline,
+      width: 82,
+      height: 21,
+    },
+    XENDIT: {
+      name: 'Xendit',
+      value: PaymentGateway.XENDIT,
+      icon: <XenditIcon />,
+      darkIcon: <XenditIcon />,
       component: PaymentOnline,
       width: 82,
       height: 21,

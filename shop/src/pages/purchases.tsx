@@ -30,7 +30,7 @@ import { CreditCardIcon } from '@/components/icons/credit-card-icon';
 function OrderedItem({ item }: { item: OrderedFile }) {
   const { t } = useTranslation('common');
   const { openModal } = useModalAction();
-  const { id: order_id, tracking_number } = item.order;
+  const { id: order_id, tracking_number } = item.order ?? {};
   const {
     id: product_id,
     shop_id,
@@ -39,7 +39,7 @@ function OrderedItem({ item }: { item: OrderedFile }) {
     image,
     preview_url,
     my_review,
-  } = item.file.fileable ?? {};
+  } = (item.file && item.file.fileable) || {};
   const { mutate } = useMutation(client.orders.generateDownloadLink, {
     onSuccess: (data) => {
       function download(fileUrl: string, fileName: string) {

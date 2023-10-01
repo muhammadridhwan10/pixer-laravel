@@ -90,6 +90,17 @@ return [
         'locale'         => env('PAYPAL_LOCALE', 'en_US'), // force gateway language  i.e. it_IT, es_ES, en_US ... (for express checkout only)
         'validate_ssl'   => env('PAYPAL_VALIDATE_SSL', true), // Validate SSL when creating api client.
     ],
+
+    'midtrans' => [
+        'mercant_id' => env('MIDTRANS_MERCHANT_ID'),
+        'client_key' => env('MIDTRANS_CLIENT_KEY'),
+        'server_key' => env('MIDTRANS_SERVER_KEY'),
+    
+        'is_production' => false,
+        'is_sanitized' => false,
+        'is_3ds' => false,
+    ],
+
     'sslcommerz' => [
         'store_id'       => env('SSLC_STORE_ID'),
         'store_password' => env('SSLC_STORE_PASSWORD'),

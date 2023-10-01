@@ -27,4 +27,5 @@ final class PaymentGatewayType extends Enum
     public const BKASH = 'BKASH';
     public const PAYMONGO = 'PAYMONGO';
     public const FLUTTERWAVE = 'FLUTTERWAVE';
+    public const MIDTRANS = 'MIDTRANS';
 }

@@ -545,6 +545,48 @@ trait PaymentStatusManagerWithOrderTrait
     }
 
     /**
+     * Status change for Midtrans
+     *
+     * @throws Exception
+     */
+    public function midtrans(Order $order, Request $request, Settings $settings): void
+    {
+        try {
+            $chosen_intent = '';
+
+            // for multi-gateway options
+            if (isset($order->payment_intent)) {
+                foreach ($order->payment_intent as $key => $intent) {
+                    if (strtoupper($request['payment_gateway']) === $order->payment_gateway) {
+                        $chosen_intent = $intent;
+                    }
+                }
+            }
+
+            $paymentId = isset($chosen_intent->payment_intent_info) ? $chosen_intent->payment_intent_info['payment_id'] : null;
+            if (isset($paymentId)) {
+                $paymentStatus = Payment::verify($paymentId);
+                if ($paymentStatus) {
+                    switch (strtolower($paymentStatus)) {
+                        case "paid":
+                            $this->paymentSuccess($order);
+                            break;
+                        case "pending":
+                            $this->paymentAwaitingForApproval($order);
+                            break;
+                        case "failed":
+                            $this->paymentFailed($order);
+                            break;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            throw new Exception(SOMETHING_WENT_WRONG_WITH_PAYMENT);
+        }
+    }
+
+
+    /**
      * Update DB status after payment success
      *
      * @param $order

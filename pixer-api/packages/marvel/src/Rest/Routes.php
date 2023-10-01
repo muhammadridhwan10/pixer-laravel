@@ -90,6 +90,7 @@ Route::post('webhooks/bitpay', [WebHookController::class, 'bitpay']);
 Route::post('webhooks/coinbase', [WebHookController::class, 'coinbase']);
 Route::post('webhooks/bkash', [WebHookController::class, 'bkash']);
 Route::post('webhooks/flutterwave', [WebHookController::class, 'flutterwave']);
+Route::post('webhooks/midtrans', [WebHookController::class, 'midtrans']);
 
 Route::get('callback/flutterwave', [WebHookController::class, 'callback'])->name('callback.flutterwave');
 

@@ -3,6 +3,7 @@ import { Controller } from 'react-hook-form';
 import CheckboxGroup from '@/components/ui/checkbox/checkbox-group';
 import { StripeIcon } from '@/components/icons/payment-gateways/stripe';
 import { PayPalIcon } from '@/components/icons/payment-gateways/paypal';
+import { MidtransIcon } from '@/components/icons/payment-gateways/midtrans';
 import { MollieIcon } from '@/components/icons/payment-gateways/mollie';
 import { RazorPayIcon } from '@/components/icons/payment-gateways/razorpay';
 import { SSLComerz } from '@/components/icons/payment-gateways/sslcomerz';
@@ -46,6 +47,7 @@ const PaymentMethodCard = ({
   const icon: any = {
     stripe: <StripeIcon />,
     paypal: <PayPalIcon />,
+    midtrans: <MidtransIcon />,
     razorpay: <RazorPayIcon />,
     mollie: <MollieIcon />,
     sslcommerz: <SSLComerz />,

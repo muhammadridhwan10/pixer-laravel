@@ -343,6 +343,8 @@ export enum PaymentGateway {
   PAYSTACK = 'PAYSTACK',
   BITPAY = 'BITPAY',
   COINBASE = 'COINBASE',
+  MIDTRANS = 'MIDTRANS',
+  XENDIT = 'XENDIT',
 }
 
 export enum OrderStatus {

@@ -15,11 +15,13 @@
         "doctrine/dbal": "3.6.0",
         "guzzlehttp/guzzle": "7.5.0",
         "karim007/laravel-bkash-tokenize": "dev-main",
+        "kingflamez/laravelrave": "dev-master",
         "laravel/framework": "10.1.5",
         "laravel/socialite": "5.6.1",
         "laravel/tinker": "2.8.1",
         "marvel/shop": "dev-master",
         "messagebird/php-rest-api": "3.1.4",
+        "midtrans/midtrans-php": "^2.5",
         "openai-php/client": "^0.4.1",
         "psr/log": "2.0.0",
         "srmklive/paypal": "3.0.19",
@@ -27,8 +29,7 @@
         "symfony/http-client": "6.2.6",
         "symfony/mailgun-mailer": "6.2.5",
         "twilio/sdk": "6.44.4",
-        "xendit/xendit-php": "^2.19",
-        "kingflamez/laravelrave": "dev-master"
+        "xendit/xendit-php": "^2.19"
     },
     "require-dev": {
         "spatie/laravel-ignition": "2.0.0",

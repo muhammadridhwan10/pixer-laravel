@@ -10,6 +10,9 @@ import { useSettings } from '@/data/settings';
 import Alert from '@/components/ui/alert';
 import { StripeIcon } from '@/components/icons/payment-gateways/stripe';
 import { PayPalIcon } from '@/components/icons/payment-gateways/paypal';
+import { MidtransIcon } from '@/components/icons/payment-gateways/midtrans';
+import { XenditIcon } from '@/components/icons/payment-gateways/xendit';
+import { MidtransDarkIcon } from '@/components/icons/payment-gateways/midtrans-dark';
 import { RazorPayIcon } from '@/components/icons/payment-gateways/razorpay';
 import { MollieIcon } from '@/components/icons/payment-gateways/mollie';
 import { PayStack } from '@/components/icons/payment-gateways/paystack';
@@ -106,6 +109,24 @@ const PaymentGrid: React.FC<{ className?: string; theme?: 'bw' }> = ({
       value: PaymentGateway.PAYPAL,
       icon: <PayPalIcon />,
       darkIcon: <PayPalDarkIcon />,
+      component: PaymentOnline,
+      width: 82,
+      height: 21,
+    },
+    MIDTRANS: {
+      name: 'Midtrans',
+      value: PaymentGateway.MIDTRANS,
+      icon: <MidtransIcon />,
+      darkIcon: <MidtransDarkIcon />,
+      component: PaymentOnline,
+      width: 82,
+      height: 21,
+    },
+    XENDIT: {
+      name: 'Xendit',
+      value: PaymentGateway.XENDIT,
+      icon: <XenditIcon />,
+      darkIcon: <XenditIcon />,
       component: PaymentOnline,
       width: 82,
       height: 21,

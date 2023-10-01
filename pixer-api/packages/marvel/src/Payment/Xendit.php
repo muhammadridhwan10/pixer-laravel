@@ -32,9 +32,13 @@ class Xendit extends Base implements PaymentInterface
   {
     try {
       extract($data);
+      
+      $usdToIdrExchangeRate =  env('KURS_DOLLAR_TO_RUPIAH');
+      $amountInIDR = round($amount * $usdToIdrExchangeRate, 2);
+      $amount = intval($amountInIDR);
+
       $params = [
-        'currency' => $this->currency,
-        'amount'   => round($amount, 2),
+        'amount'   => $amount,
         'callback_url' => config("shop.xendit.webhook_url"),
         "description" => "Order From " . $order_tracking_number,
         'success_redirect_url' => config("shop.shop_url") . "/orders/{$order_tracking_number}/thank-you",
@@ -47,7 +51,7 @@ class Xendit extends Base implements PaymentInterface
         'order_tracking_number'   => $order_tracking_number,
         'is_redirect'  => true,
         'payment_id'   => $order['id'],
-        'redirect_url' => $order['invoice_url'],
+        'redirect_url' => "https://checkout-staging.xendit.co/v2/" . $order['id'],
       ];
     } catch (Exception $e) {
       throw new MarvelException(SOMETHING_WENT_WRONG_WITH_PAYMENT);

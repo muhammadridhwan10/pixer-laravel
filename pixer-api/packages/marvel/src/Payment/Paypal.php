@@ -87,7 +87,7 @@ class Paypal extends Base implements PaymentInterface
                         "invoice_id"  => $order_tracking_number,
                         "amount"      => [
                             "currency_code" => $this->currency,
-                            "value"         => round($amount, 2),
+                            "value"         => number_format($amount, 2, '.', ''),
                         ],
                         'description' => "Order From " . config('app.name'),
                     ]

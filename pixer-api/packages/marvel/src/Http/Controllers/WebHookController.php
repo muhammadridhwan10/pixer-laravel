@@ -5,6 +5,7 @@ namespace Marvel\Http\Controllers;
 use Illuminate\Http\Request;
 use Marvel\Facades\Payment;
 use Marvel\Payments\Flutterwave;
+use Marvel\Payments\Midtrans;
 
 class WebHookController extends CoreController
 {
@@ -62,6 +63,11 @@ class WebHookController extends CoreController
     public function flutterwave(Request $request)
     {
         return Payment::handleWebHooks($request);
+    }
+    public function midtrans(Request $request)
+    {
+        $midtrans = new Midtrans();
+        return $midtrans->handleWebHooks($request);
     }
     public function callback(Request $request)
     { 

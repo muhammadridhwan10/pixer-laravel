@@ -6,4 +6,6 @@ export const PAYMENT_GATEWAY = [
   { name: 'paystack', title: 'Paystack' },
   { name: 'bitpay', title: 'BitPay' },
   { name: 'coinbase', title: 'Coinbase' },  
+  { name: 'midtrans', title: 'Midtrans' },
+  { name: 'xendit', title: 'Xendit' },  
 ];
